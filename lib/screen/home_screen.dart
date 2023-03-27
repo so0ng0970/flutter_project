@@ -1,106 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+final homeUrl = Uri.parse('https://soonger.tistory.com');
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+class HomeScreen extends StatelessWidget {
+  WebViewController controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..loadRequest(homeUrl);
 
-class _HomeScreenState extends State<HomeScreen> {
+  HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        bottom: false, // 이러면 아래에도 적용을 할 수 있다.
-        child: Container(
-          color: Colors.black,
-          child: Column(
-            // mainAxisAlignment - 주축정렬
-            // crossAxisAlignment - 반대축 정렬
-            // mainAxisSize 주축 크기
-
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.orange,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.green,
-                  )
-                ],
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text('soonger'),
+          backgroundColor: Colors.orange,
+          actions: [
+            IconButton(
+              onPressed: () {
+                controller
+                    .loadRequest(Uri.parse('https://soonger.tistory.com'));
+              },
+              icon: const Icon(
+                Icons.home,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.orange,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.orange,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.green,
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.green,
-                  )
-                ],
-              )
-              // Expanded, Flexible row,column에서만 사용가능
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
-    );
+        body: WebViewWidget(
+          controller: controller,
+        )
+
+        // WebView(
+        //   onWebViewCreated: (WebViewController controller) {
+        //     this.controller = controller;
+        //   },
+        //   initialUrl: homeUrl,
+        //   javascriptMode: JavascriptMode.unrestricted, // 자바스크립트 가능해짐 동영상
+        // ),
+        );
   }
 }
