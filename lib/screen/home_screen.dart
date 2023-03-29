@@ -20,8 +20,7 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                controller
-                    .loadRequest(Uri.parse('https://soonger.tistory.com'));
+                controller.loadRequest(homeUrl);
               },
               icon: const Icon(
                 Icons.home,
