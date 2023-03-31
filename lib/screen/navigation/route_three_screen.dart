@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_project/layout/main_layout.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class RouteTwoScreen extends StatelessWidget {
-  const RouteTwoScreen({super.key});
+class RouteThreeScreen extends StatelessWidget {
+  const RouteThreeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MainLayout(title: 'Route Two', children: []);
+    return Container();
   }
 }
