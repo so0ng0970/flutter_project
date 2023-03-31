@@ -36,13 +36,12 @@ class ButtonScreen extends StatelessWidget {
                   },
                 ),
                 padding: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                    if (states.contains(MaterialState.pressed)) {
-                      return const EdgeInsets.all(100.0);
-                    }
-                    return const EdgeInsets.all(20.0);
-                  },
-                ),
+                    (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    return const EdgeInsets.all(100.0);
+                  }
+                  return null;
+                }),
               ),
               child: const Text('buttonStyle'),
             ),
@@ -50,7 +49,7 @@ class ButtonScreen extends StatelessWidget {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                   // 글자 및 애니메이션 효과
-                  foregroundColor: Colors.black,
+                  foregroundColor: Colors.amber,
                   // 배경색
                   backgroundColor: Colors.red,
                   // 그림자색
