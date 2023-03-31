@@ -21,6 +21,24 @@ class RouteOneScreen extends StatelessWidget {
             backgroundColor: Colors.grey,
           ),
           onPressed: () {
+            print(Navigator.of(context).canPop());
+          },
+          child: const Text('can pop'),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey,
+          ),
+          onPressed: () {
+            Navigator.of(context).maybePop();
+          },
+          child: const Text('maybe Pop'),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey,
+          ),
+          onPressed: () {
             Navigator.of(context).pop(456);
           },
           child: const Text('pop'),
