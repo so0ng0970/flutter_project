@@ -12,20 +12,28 @@ class ImageCarousel extends StatefulWidget {
 
 class _ImageCarouselState extends State<ImageCarousel> {
   Timer? timer;
-  PageController controller = PageController(
-    initialPage: 0,
-  );
+
+  PageController controller = PageController(initialPage: 0);
   @override
   void initState() {
     // TODO:타이머 실행
     super.initState();
 
     timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      // int currentPage = controller.page!.toInt();
+      // int nextPage = currentPage + 1;
+      // if (nextPage > 4) {
+      //   nextPage = 0;
+      // }
+
+      // controller.animateToPage(
+      //   nextPage,
+      //   duration: const Duration(milliseconds: 400),
+      //   curve: Curves.linear,
+      // );
       int currentPage = controller.page!.toInt();
-      int nextPage = currentPage + 1;
-      if (nextPage > 4) {
-        nextPage = 0;
-      }
+      // 첫페이지 돌아오는 거
+      int nextPage = (currentPage + 1) % 5;
 
       controller.animateToPage(
         nextPage,

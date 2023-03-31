@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/screen/image_carousel.dart';
+import 'package:flutter_project/screen/button_screen.dart';
 
 void main() {
   // 플러터 프레임워크가
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       // debugShowCheckedModeBanner: false, - 디버그 없애기
-      home: ImageCarousel(),
+      home: ButtonScreen(),
     );
   }
 }
