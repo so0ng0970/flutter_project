@@ -17,7 +17,7 @@ class _FutureBuildScreenState extends State<FutureBuildScreen> {
     );
 
     return Scaffold(
-      // FutureBuilder 캐싱, 기존의 데이터를 기억을 한다.
+      // FutureBuilder 캐싱, 기존의 데이터를 기억을 한다. 잘 활용하면 고객들한테 로딩이 안 걸린거 처럼 속일 수 있음 
       body: FutureBuilder(
         future: getNumber(),
         // initialData: InitialData,
