@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/builder/future_builder.dart';
-import 'package:flutter_project/screen/navigation/navigate_screen.dart';
-import 'package:flutter_project/screen/navigation/route_one_screen.dart';
-import 'package:flutter_project/screen/navigation/route_three_screen.dart';
-import 'package:flutter_project/screen/navigation/route_two_screen.dart';
+import 'package:flutter_project/builder/stream_builder.dart';
 
 void main() {
   // 플러터 프레임워크가
@@ -20,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         // debugShowCheckedModeBanner: false, - 디버그 아이콘 없애기
-        home: FutureBuildScreen()
+        home: StreamBuilderScreen()
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => const Navigatescreen(),
