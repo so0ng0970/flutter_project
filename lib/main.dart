@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/builder/stream_builder.dart';
+import 'package:flutter_project/screen/scroll_view/scroll_main.dart';
 
 void main() {
   // 플러터 프레임워크가
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         // debugShowCheckedModeBanner: false, - 디버그 아이콘 없애기
-        home: StreamBuilderScreen()
+        home: ScrollMainScreen()
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => const Navigatescreen(),
