@@ -40,7 +40,6 @@ class SingleChildScrollViewScreen extends StatelessWidget {
   // 화면을 넘어가지 않아도 스크롤 되기하기
   Widget renderAlwaysScroll() {
     return SingleChildScrollView(
-      // neverScrollableScrollPhysics - 스크롤 안됨
       // 화면을 안 벗어나도 스크롤 하게 할 수 있다.
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(children: [
@@ -70,7 +69,7 @@ class SingleChildScrollViewScreen extends StatelessWidget {
   Widget renderPhysics() {
     return SingleChildScrollView(
       // AlwaysScrollableScrollPhysics() - 스크롤 됨
-      // neverScrollableScrollPhysics - 스크롤 안됨
+      // neverScrollableScrollPhysics() - 스크롤 안됨
       // BouncingScrollPhysics() - ios 스타일
       // ClampingScrollPhysics() - android 스타일
       physics: const ClampingScrollPhysics(),
