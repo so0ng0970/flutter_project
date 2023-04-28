@@ -10,7 +10,7 @@ class SingleChildScrollViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScrollLayout(
       title: 'SingleChildScrollView',
-      // 한번에 다 렌더링 되어서 최적화에 좋지 않다. - 가벼운 것만 쓰는게 나음 
+      // 한번에 다 렌더링 되어서 최적화에 좋지 않다. - 가벼운 것만 쓰는게 나음
       body: SingleChildScrollView(
         child: Column(
           children: numbers
@@ -76,6 +76,23 @@ class SingleChildScrollViewScreen extends StatelessWidget {
       physics: const ClampingScrollPhysics(),
       child: Column(
         children: rainbowColors.map((e) => renderContainer(color: e)).toList(),
+      ),
+    );
+  }
+
+  // 5
+  // singleChildScrollView 퍼포먼스
+  Widget renderPerformance() {
+    return SingleChildScrollView(
+      child: Column(
+        children: numbers
+            .map(
+              (e) => renderContainer(
+                color: rainbowColors[e % rainbowColors.length],
+                index: e,
+              ),
+            )
+            .toList(),
       ),
     );
   }
