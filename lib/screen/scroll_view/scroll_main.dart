@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/layout/scroll_layout.dart';
+import 'package:flutter_project/screen/scroll_view/single_child_scroll_view.dart';
 
 class ScrollMainScreen extends StatelessWidget {
   const ScrollMainScreen({super.key});
@@ -15,9 +16,15 @@ class ScrollMainScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => SingleChildScrollViewScreen(),
+                  ),
+                );
+              },
               child: const Text(
-                'DD',
+                'SingleChildScrollViewScreen',
               ),
             ),
           ],
