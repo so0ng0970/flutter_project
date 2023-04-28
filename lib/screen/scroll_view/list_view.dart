@@ -34,6 +34,7 @@ class ListViewScreen extends StatelessWidget {
   }
 
   // 1 - renderDefault()
+  // 모두 한번에 그림
   Widget renderDefault() {
     return ListView(
       children: numbers
@@ -46,6 +47,7 @@ class ListViewScreen extends StatelessWidget {
   }
 
   // 2 - renderBuilder
+  // 보이는 것만 그림
   Widget renderBuilder() {
     return ListView.builder(
         itemCount: 100,
@@ -56,6 +58,7 @@ class ListViewScreen extends StatelessWidget {
   }
 
   // 3 separateBuider
+  // 보이는 것만 그리고 사이에 빌더 넣을 수 있음
   Widget renderSeparated() {
     return ListView.separated(
       itemCount: 100,
