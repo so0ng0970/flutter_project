@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/layout/scroll_layout.dart';
-import 'package:flutter_project/screen/scroll_view/list_view.dart';
-import 'package:flutter_project/screen/scroll_view/single_child_scroll_view.dart';
+import 'package:flutter_project/screen/grid/grid_view_screen.dart';
+import 'package:flutter_project/screen/scroll/list_view.dart';
+import 'package:flutter_project/screen/scroll/single_child_scroll_view.dart';
 
 class ScreenModel {
   final WidgetBuilder builder;
@@ -21,6 +22,10 @@ class ScrollMainScreen extends StatelessWidget {
     ScreenModel(
       builder: (_) => ListViewScreen(),
       name: 'ListViewScreen',
+    ),
+    ScreenModel(
+      builder: (_) => GridViewScreen(),
+      name: 'GridViewScreen',
     ),
   ];
   ScrollMainScreen({super.key});

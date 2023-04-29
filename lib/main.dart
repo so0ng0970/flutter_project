@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/screen/scroll_view/scroll_main.dart';
+import 'package:flutter_project/screen/scroll/scroll_main.dart';
 
 void main() {
   // 플러터 프레임워크가
