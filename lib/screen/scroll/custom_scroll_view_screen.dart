@@ -9,13 +9,43 @@ class CustomScrollViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
-          const SliverAppBar(
-            title: Text('CustomScrollViewScreen'),
-          ),
-          renderSliverGridBuilder()
+          renderSliverAppBar(),
+          renderChildSliverList(),
+          renderSliverGridBuilder(),
         ],
       ),
+    );
+  }
+
+  // Appbar
+  SliverAppBar renderSliverAppBar() {
+    return SliverAppBar(
+      centerTitle: true,
+      // floating - 위로 스크롤 하면 보임
+      floating: true,
+      // Pinned - 스크롤을 해도 고정되어있음
+      pinned: false,
+      // snap - 자석효과 , floating이 true 여야 한다.
+      snap: true,
+      // stretch - 맨 위에서 한계 이상으로 스크롤 했을 때 남는 공간을 차지
+      // 안드로이드는 BouncingScrollPhysics() 상태일때 가능함
+      stretch: true,
+      expandedHeight: 200,
+      collapsedHeight: 150,
+      flexibleSpace: FlexibleSpaceBar(
+        centerTitle: true,
+        background: Image.asset(
+          'asset/image/image_3.jpg',
+          fit: BoxFit.cover,
+        ),
+        title: const Text(
+          'hi :)',
+        ),
+      ),
+
+      title: const Text('CustomScrollViewScreen'),
     );
   }
 
