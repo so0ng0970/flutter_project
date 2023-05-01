@@ -3,6 +3,7 @@ import 'package:flutter_project/layout/scroll_layout.dart';
 import 'package:flutter_project/screen/grid/grid_view_screen.dart';
 import 'package:flutter_project/screen/scroll/custom_scroll_view_screen.dart';
 import 'package:flutter_project/screen/scroll/list_view.dart';
+import 'package:flutter_project/screen/scroll/refresh_indicator.dart';
 import 'package:flutter_project/screen/scroll/reorderable_list_view_screen.dart';
 import 'package:flutter_project/screen/scroll/scrollbar_screen.dart';
 import 'package:flutter_project/screen/scroll/single_child_scroll_view.dart';
@@ -41,6 +42,10 @@ class ScrollMainScreen extends StatelessWidget {
     ScreenModel(
       builder: (_) => ScrollbarScreen(),
       name: 'ScrollbarScreen',
+    ),
+    ScreenModel(
+      builder: (_) => RefreshIndicatorScreen(),
+      name: ' RefreshIndicatorScreen',
     ),
   ];
   ScrollMainScreen({super.key});
