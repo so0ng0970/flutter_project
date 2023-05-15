@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/screen/tabbar/appbar_using_controller.dart';
 import 'package:flutter_project/screen/tabbar/basic_appbar_tabbar_screen.dart';
+import 'package:flutter_project/screen/tabbar/bottom_navigation_bar.dart';
 
 class TabBarScreen extends StatelessWidget {
   const TabBarScreen({super.key});
@@ -42,6 +43,18 @@ class TabBarScreen extends StatelessWidget {
               },
               child: const Text(
                 'Appbar Using Controller',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const BottomNavigationBarScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Bottom Navigation Bar',
               ),
             ),
           ],
