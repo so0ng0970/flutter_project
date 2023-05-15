@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/screen/scroll/scroll_main.dart';
+import 'package:flutter_project/screen/tabbar/tab_bar_screen.dart';
 
 void main() {
   // 플러터 프레임워크가
@@ -14,10 +15,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         // debugShowCheckedModeBanner: false, - 디버그 아이콘 없애기
-        home: ScrollMainScreen()
-        // initialRoute: '/',
+        home: TabBarScreen()
         // routes: {
         //   '/': (context) => const Navigatescreen(),
         //   '/one': (context) => const RouteOneScreen(),
